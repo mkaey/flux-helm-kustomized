@@ -1,6 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    kubernetes.azure.com/tls-cert-keyvault-uri: "https://kv-mkaey-rd5h.vault.azure.net/certificates/pythonapp-mkaey-de/801b73523dbc4983ae28eec038d9446f"
   name: votingapp-ingress
   namespace: votingapp
 spec:
@@ -19,4 +21,4 @@ spec:
   tls:
     - hosts:
         - pythonapp.mkaey.de
-      secretName: ingress-tls-csi
+      secretName: keyvault-votingapp-ingress
