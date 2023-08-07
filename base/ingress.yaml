@@ -11,7 +11,7 @@ spec:
         paths:
           - backend:
               service:
-                name: aks-helloworld
+                name: azure-vote-front
                 port:
                   number: 80
             path: /
